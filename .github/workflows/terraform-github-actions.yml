@@ -60,13 +60,32 @@ jobs:
             echo "Current directory : $PWD"
             ls
             terraform init
+        
+        # Terraform validate
+        - name: Terraform Validate
+          run: |
+            echo "Current directory : $PWD"
+            cd $GITHUB_WORKSPACE/deploy
+            echo "Current directory : $PWD"
+            ls
+            terraform validate
 
-        # # Runs a set of commands using the runners shell
-        # - name: Run a multi-line script
-        #   run: |
-        #     echo Add other actions to build,
-        #     echo test, and deploy your project.
-        # - name: list contents & copy
-        #   run: |
-        #     echo 
+        # Terraform plan
+        - name: Terraform Plan
+          run: |
+            echo "Current directory : $PWD"
+            cd $GITHUB_WORKSPACE/deploy
+            echo "Current directory : $PWD"
+            ls
+            terraform plan -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -lock=false
+        
+
+        # Terraform Apply
+        - name: Terraform Plan
+          run: |
+            echo "Current directory : $PWD"
+            cd $GITHUB_WORKSPACE/deploy
+            echo "Current directory : $PWD"
+            ls
+            terraform plan -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -lock=false
 
