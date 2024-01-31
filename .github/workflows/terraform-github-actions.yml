@@ -87,5 +87,5 @@ jobs:
             cd $GITHUB_WORKSPACE/deploy
             echo "Current directory : $PWD"
             ls
-            terraform apply -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -lock=false
+            terraform apply -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -auto-approve -lock=false
 
