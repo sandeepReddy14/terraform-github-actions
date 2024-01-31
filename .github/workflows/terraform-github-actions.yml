@@ -31,6 +31,9 @@ jobs:
             echo "Current directory : $PWD"
             echo "Workspace : $GITHUB_WORKSPACE"
             ls
+            cp $GITHUB_WORKSPACE/environments/dev/backend.tf $GITHUB_WORKSPACE/deploy/
+            cd $GITHUB_WORKSPACE/deploy
+            ls
 
         # # Runs a set of commands using the runners shell
         # - name: Run a multi-line script
