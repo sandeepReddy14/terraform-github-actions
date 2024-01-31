@@ -81,11 +81,11 @@ jobs:
         
 
         # Terraform Apply
-        - name: Terraform Plan
+        - name: Terraform Apply
           run: |
             echo "Current directory : $PWD"
             cd $GITHUB_WORKSPACE/deploy
             echo "Current directory : $PWD"
             ls
-            terraform plan -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -lock=false
+            terraform apply -var-file="$GITHUB_WORKSPACE/environments/dev/environment.tfvars" -lock=false
 
