@@ -1,6 +1,6 @@
 environment             = "dev"
 resource_group_location = "West US"
-resource_group_name     = "dev-resource-group"
+resource_group_name     = "resource-group"
 
 # hub configuration variables
 
